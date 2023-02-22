@@ -23,3 +23,5 @@ function fenetreModale() {
     document.body.appendChild(modal);
 
   }
+
+  
