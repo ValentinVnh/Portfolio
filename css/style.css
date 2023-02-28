@@ -1,68 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fjalla One:wght@300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fjalla One:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700;900&display=swap");
+@import url("https://use.typekit.net/otr2eby.css");
 
-html{
+@font-face {
+    font-family: Tisa;
+    src: url(../fonts/TisaSansPro-Light.woff2) format("woff2");
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Yolk;
+    src: url(../fonts/FEYolk.otf) format("otf");
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+}
+
+:root {
+    --font-basic: brown-pro, Tisa, Fjalla One;
+    --font-swap: Yolk, Roboto, Ubuntu;
+    --color-basic: rgb(255, 255, 255);
+    --color-org: rgba(255, 87, 1, 0.06);
+}
+
+html {
     scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #ffffff;
+    font-family: var(--font-swap);
+    font-weight: 300;
+    background-color: rgb(255, 255, 255);
 }
 
 nav {
+    width: 100%;
     display: flex;
     align-items: center;
-    padding: 1rem 2rem;
-    background: rgb(227, 227, 227);
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+nav div {
+    margin-left: 70px;
+    font-size: 25px;
+    background: var(--color-basic);
+    font-weight: 500;
     border-radius: 10px;
-  }
-  
-  nav ul {
+}
+
+nav div img {
+    width: 22px;
+}
+
+nav ul {
     display: flex;
-    list-style: none; 
-  }
-  
-  nav li {
-    padding-left: 1rem; 
-  }
-  
-  nav a {
+    list-style: none;
+    font-weight: 500;
+    margin-top: 20px;
+
+}
+
+nav li {
+    padding-left: 2rem;
+}
+
+nav a {
     text-decoration: none;
     color: black;
     padding: 10px;
-  }
+}
 
-  nav a:hover{
-    background-color: #cbcbcb;
+nav a:hover {
+    color: #b4b4b4;
     border-radius: 10px;
-  }
+    animation-name: colorNavA;
+    animation-duration: 200ms;
+}
 
-  @media only screen and (max-width: 600px) {
+@keyframes colorNavA {
+    0% {
+        color: #000;
+    }
+    50% {
+        color: #6e6e6e;
+    }
+    100% {
+        color: #b4b4b4;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
     nav {
-      flex-direction: column;
+        flex-direction: column;
     }
-    nav ul {
-      flex-direction: column;
-      padding-top: 0.5rem;
-    }
-    nav li {
-      padding: 0.5rem 0;
-    }
-  } 
-  
 
-.logo_text {
-    font-size: 40pt;
-    font-weight: bold;
-    height: 70px;
-    top: 20px;
-    left: 30px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    color: #232323;
+    nav ul {
+        flex-direction: column;
+        padding-top: 0.5rem;
+    }
+
+    nav li {
+        padding: 0.5rem 0;
+    }
 }
 
 h1 {
@@ -74,18 +119,18 @@ h1 {
     justify-content: center;
     background-color: rgb(227, 227, 227);
     border-radius: 10px;
-    margin: 20px 20px 0px 20px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin: 20px 20px 0 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0 3px 7px -3px;
 }
 
 .sous_realise {
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .competence {
     margin-left: 20px;
 }
-
 
 .comp {
     width: 50%;
@@ -103,47 +148,48 @@ h1 {
 }
 
 .wrapper {
-	width: 300px;
+    width: 300px;
 }
+
 .progress-bar {
-	padding: 15px 0;
-	border-radius: 3px;
-	background-color: #fff;
+    padding: 15px 0;
+    border-radius: 3px;
+    background-color: #fff;
 }
 
 .progress-bar progress {
-	background-color: #f3f3f3;
-	border: 0;
-	width: 80%;
-	height: 18px;
-	border-radius: 9px;
+    background-color: #f3f3f3;
+    border: 0;
+    width: 80%;
+    height: 18px;
+    border-radius: 9px;
 }
 
 .progress-bar progress::-webkit-progress-bar {
-	background-color: #f3f3f3;
-	border-radius: 9px;
+    background-color: #f3f3f3;
+    border-radius: 9px;
 }
 
 .progress-bar progress::-webkit-progress-value {
-	background: #fff;
-	background: -moz-linear-gradient(top,  #bababa 0%, #7b7b7b 100%);
-	background: -webkit-linear-gradient(top,  #bababa 0%,#7b7b7b 100%);
-	border-radius: 9px;
+    background: #fff;
+    background: -moz-linear-gradient(top, #bababa 0%, #7b7b7b 100%);
+    background: -webkit-linear-gradient(top, #bababa 0%, #7b7b7b 100%);
+    border-radius: 9px;
 }
 
 .progress-bar .progress-value {
-	padding: 0px 5px;
-	line-height: 20px;
-	margin-left: 5px;
-	font-size: .8em;
-	color: #555;
-	height: 18px;
-	float: right;
+    padding: 0 5px;
+    line-height: 20px;
+    margin-left: 5px;
+    font-size: 0.8em;
+    color: #555;
+    height: 18px;
+    float: right;
 }
 
 /* Fenêtre Modal */
 
-.baseModal{
+.baseModal {
     position: fixed;
     top: 0;
     left: 0;
@@ -152,13 +198,9 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation-name: changeColor;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
-.cadreFModal{
+.cadreFModal {
     padding: 80px 180px;
     background-color: #fff;
     border-radius: 5px;
@@ -170,57 +212,119 @@ h1 {
     animation-timing-function: ease-in-out;
 }
 
-.texteFModal{
-    font-family: Fjalla One, sans-serif;
+.texteFModal {
     font-size: 20px;
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0 0 0;
 }
 
-.linkedinFModal{
-    font-family: Fjalla One, sans-serif;
+.linkedinFModal {
     font-size: 20px;
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.linkedinFModal a{
+.linkedinFModal a {
     text-decoration: none;
-    color:#2266C2;
+    color: #2266c2;
 }
 
 /* baseModal background qui change entre 2 couleurs avec transition @Keyframes*/
-@keyframes changeColor{
-    0%{
-        background-color: #2267c2b6;
+@keyframes changeColor {
+    0% {
+        background-color: rgba(255, 255, 255, 0);
     }
-    100%{
-        background-color: #2267c278;
+    100% {
+        background-color: var(--color-org);
     }
 }
 
 /* Animation du cadre Modal */
 
-@keyframes cadreModal{
-    0%{
+@keyframes cadreModal {
+    0% {
         transform: scale(0);
     }
-    50%{
+    50% {
         transform: scale(1.1);
     }
-    100%{
+    100% {
         transform: scale(1);
     }
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-index {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-item {
+    background-color: var(--color-basic);
+    padding: 20px;
+    width: 65%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px;
+}
+
+.grid-item h2 {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoPro {
+    margin-top: 50px;
+    background-color: var(--color-basic);
+    border-radius: 10px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 
 
+}
 
+.infoPro img {
+    width: 20%;
+    height: 20%;
 
+}
 
+.infoPro p:Nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    font-weight: 500;
+    margin-bottom: -50px;
+    margin-left: -350px;
+    color: var(--color-org);
+}
 
+.infoPro p:Nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 450;
+}
 
-
-
-
+hr{
+    width: 90%;
+    height: 1px;
+    background-color: #949494;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
