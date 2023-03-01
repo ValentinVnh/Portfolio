@@ -5,14 +5,6 @@
 @import url("https://use.typekit.net/otr2eby.css");
 
 @font-face {
-    font-family: Tisa;
-    src: url(../fonts/TisaSansPro-Light.woff2) format("woff2");
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-}
-
-@font-face {
     font-family: Yolk;
     src: url(../fonts/FEYolk.otf) format("otf");
     font-style: normal;
@@ -21,15 +13,14 @@
 }
 
 :root {
-    --font-basic: brown-pro, Tisa, Fjalla One;
+    --font-basic: brown-pro, Fjalla One;
     --font-swap: Yolk, Roboto, Ubuntu;
     --color-basic: rgb(255, 255, 255);
-    --color-org: rgba(255, 87, 1, 0.06);
+    --color-org: rgb(255, 87, 1);
 }
 
 html {
     scroll-behavior: smooth;
-    overflow: hidden;
 }
 
 body {
@@ -53,6 +44,10 @@ nav div {
     border-radius: 10px;
 }
 
+nav div a {
+    margin-left: -10px;
+}
+
 nav div img {
     width: 22px;
 }
@@ -73,25 +68,13 @@ nav a {
     text-decoration: none;
     color: black;
     padding: 10px;
+    transition: opacity 500ms ease
 }
 
 nav a:hover {
-    color: #b4b4b4;
     border-radius: 10px;
-    animation-name: colorNavA;
-    animation-duration: 200ms;
-}
-
-@keyframes colorNavA {
-    0% {
-        color: #000;
-    }
-    50% {
-        color: #6e6e6e;
-    }
-    100% {
-        color: #b4b4b4;
-    }
+    opacity: 50%;
+    transition: opacity 500ms ease;
 
 }
 
@@ -187,73 +170,6 @@ h1 {
     float: right;
 }
 
-/* Fenêtre Modal */
-
-.baseModal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cadreFModal {
-    padding: 80px 180px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    animation-name: cadreModal;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-}
-
-.texteFModal {
-    font-size: 20px;
-    margin: 10px 0 0 0;
-}
-
-.linkedinFModal {
-    font-size: 20px;
-    margin: 10px 0 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.linkedinFModal a {
-    text-decoration: none;
-    color: #2266c2;
-}
-
-/* baseModal background qui change entre 2 couleurs avec transition @Keyframes*/
-@keyframes changeColor {
-    0% {
-        background-color: rgba(255, 255, 255, 0);
-    }
-    100% {
-        background-color: var(--color-org);
-    }
-}
-
-/* Animation du cadre Modal */
-
-@keyframes cadreModal {
-    0% {
-        transform: scale(0);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -327,4 +243,23 @@ hr{
     border: none;
     border-radius: 10px;
     margin-bottom: 50px;
+}
+
+.infoTop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.infoTop h1{
+    font-size: 60px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.infoTop p{
+
+    color: #2f2f2f;
 }

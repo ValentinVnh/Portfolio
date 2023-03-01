@@ -1,27 +1,4 @@
-window.addEventListener("load", fenetreModale);
 
-function fenetreModale() {
-  const modal = document.createElement("div");
-  modal.classList.add("baseModal");
-
-  const cadre = document.createElement("div");
-  cadre.classList.add("cadreFModal");
-
-  const texte = document.createElement("div");
-  texte.classList.add("texteFModal");
-  texte.textContent =
-    "Mon site portfolio est en construction... Revenez plus tard !";
-
-  const linkedin = document.createElement("div");
-  linkedin.classList.add("linkedinFModal");
-  linkedin.innerHTML =
-    '<a href="https://www.linkedin.com/in/valentin-vanhove/">Voici mon LinkedIn</a>';
-
-  cadre.appendChild(texte);
-  cadre.appendChild(linkedin);
-  modal.appendChild(cadre);
-  document.body.appendChild(modal);
-}
 
 const nav1 = document.querySelector("body > header > nav > ul > li:nth-child(1) > a");
 const nav2 = document.querySelector("body > header > nav > ul > li:nth-child(2) > a");
@@ -45,6 +22,21 @@ function colorNav() {
   }
 }
 
+function hoverNavDiv(){
+  const navDiv = document.querySelector("body > header > nav > div > img");
+  navDiv.style.transform = "translateX(-10px)";
+  navDiv.style.transition = "1s ease";
+}
+
+function hoverNavDivOut(){
+    const navDiv = document.querySelector("body > header > nav > div > img");
+    navDiv.style.transform = "translateX(0px)";
+    navDiv.style.transition = "1s ease";
+}
+
+const navDivTxt = document.querySelector("body > header > nav > div > a");
+navDivTxt.addEventListener("mouseover", hoverNavDiv);
+navDivTxt.addEventListener("mouseout", hoverNavDivOut);
 
 
 
