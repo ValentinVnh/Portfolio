@@ -48,6 +48,24 @@ const hiddenElement = document.querySelectorAll('.hidden')
 hiddenElement.forEach((e1) => observer.observe(e1));
 
 
+/* RESUME */
+
+let delay = 200;
+
+const observercv = new IntersectionObserver(boxes => {
+boxes.forEach(box => {
+    setTimeout(() => {
+        box.target.classList.add('showbox');
+    }, delay);
+    delay += 100;
+});
+});
+
+const boxes = document.querySelectorAll('.hiddenbox');
+boxes.forEach((e1) => observercv.observe(e1));
+
+
+
 
 
 
