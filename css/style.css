@@ -249,3 +249,12 @@ hr{
     color: #2f2f2f;
     margin-top: -5px;
 }
+
+.hidden{
+    opacity: 0;
+    transition: all 1s;
+}
+
+.show{
+    opacity: 1;
+}
