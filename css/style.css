@@ -98,45 +98,75 @@ h1 {
     margin-left: 20px;
 }
 
-.wrapper {
-    width: 300px;
+.hautcv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.progress-bar {
-    padding: 15px 0;
-    border-radius: 3px;
-    background-color: #fff;
+.aPropos{
+    background-color: antiquewhite;
 }
 
-.progress-bar progress {
-    background-color: #f3f3f3;
-    border: 0;
-    width: 80%;
-    height: 18px;
-    border-radius: 9px;
+.allCompetence{
+    background-color: #e8e8e8;
+    display: flex;
+    padding: 50px;
+    border-radius: 10px;
+    width: 50%;
 }
 
-.progress-bar progress::-webkit-progress-bar {
-    background-color: #f3f3f3;
-    border-radius: 9px;
+.allCompetence h1{
+    display: flex;
+    position: absolute;
+    margin: -50px 0 0 20px;
 }
 
-.progress-bar progress::-webkit-progress-value {
-    background: #fff;
-    background: -moz-linear-gradient(top, #bababa 0%, #7b7b7b 100%);
-    background: -webkit-linear-gradient(top, #bababa 0%, #7b7b7b 100%);
-    border-radius: 9px;
+.competence {
+    box-sizing: border-box;
+    padding: 30px;
+    width: 160px;
 }
 
-.progress-bar .progress-value {
-    padding: 0 5px;
-    line-height: 20px;
-    margin-left: 5px;
-    font-size: 0.8em;
-    color: #555;
-    height: 18px;
-    float: right;
+.blocCompetence {
+    background-color: #bbbbbb;
+    border-radius: 45px;
+    height: 150px;
 }
+
+.imageCompetence img {
+    width: 70px;
+    margin: 10px 15px 0 15px;
+}
+
+.txtCompetence {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 100px;
+
+}
+
+.txtCompetence h6{
+    margin: 20px 5px 20px 5px;
+}
+
+.txtCompetence span{
+    color: #484848;
+
+    font-size: 20px;
+}
+.sousCompetence{
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 
 .grid-container {
     display: grid;
@@ -156,12 +186,14 @@ h1 {
     width: 85%;
     height: 600px;
     border-radius: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0 6px 12px -2px;
     transition: transform 0.7s ease;
     transform: scale(1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.grid-item:hover{
+.grid-item:hover {
     transform: scale(1.04);
     transition: transform 0.7s ease;
 }
@@ -172,16 +204,26 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+
 }
 
-.imageGrid img{
-    width: 600px;
+.imageGrid img {
+    width: 700px;
 
 }
-.imageGrid{
-    display: flex;
-    justify-content: right;
 
+.imageNdi {
+    margin-right: 15px;
+    box-shadow: 0 6px 15px -3px rgba(0, 0, 0, 0.90);
+    border-radius: 5px;
+}
+
+.txtGrid {
+    margin: auto;
 }
 
 .infoPro {
@@ -222,7 +264,7 @@ h1 {
     font-weight: 450;
 }
 
-hr{
+hr {
     width: 90%;
     height: 1px;
     background-color: #949494;
@@ -231,7 +273,7 @@ hr{
     margin-bottom: 50px;
 }
 
-.infoTop{
+.infoTop {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -239,22 +281,22 @@ hr{
     margin-bottom: 50px;
 }
 
-.infoTop h1{
+.infoTop h1 {
     font-size: 60px;
     font-weight: 500;
     margin-bottom: 20px;
 }
 
-.infoTop p{
+.infoTop p {
     color: #2f2f2f;
     margin-top: -5px;
 }
 
-.hidden{
+.hidden {
     opacity: 0;
     transition: all 1s;
 }
 
-.show{
+.show {
     opacity: 1;
 }
